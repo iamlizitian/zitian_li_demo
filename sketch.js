@@ -45,7 +45,7 @@ function draw() {
   // Draw the video
   image(flippedVideo, 0, 0);
 
-  //ellipse(position.x, position.y, 50, 50),
+  ellipse(position.x, position.y, 50, 50),
 
   // Draw the label
   fill(255);
@@ -76,7 +76,9 @@ function gotResult(error, results) {
 
   if(label == "UP"){
     position.y = position.y - 1;
-
+  
+  if(label == "DOWN");
+    position.y = position.y + 1;
   }
 
   classifyVideo();
