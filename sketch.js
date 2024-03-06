@@ -74,10 +74,9 @@ function gotResult(error, results) {
   label = results[0].label;
   // Classifiy again!
 
-  if(label == "UP"){
+  if (label == "UP") {
     position.y = position.y - 1;
-  
-  if(label == "DOWN");
+  } else if (label == "DOWN") {
     position.y = position.y + 1;
   }
 
