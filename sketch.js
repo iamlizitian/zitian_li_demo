@@ -20,6 +20,7 @@ let video;
 let flippedVideo;
 // To store the classification
 let label = "";
+let position 
 
 // Load the model first
 function preload() {
@@ -36,6 +37,7 @@ function setup() {
   flippedVideo = ml5.flipImage(video)
   // Start classifying
   classifyVideo();
+  position = createVector(width/2, height/2);
 }
 
 function draw() {
@@ -43,7 +45,7 @@ function draw() {
   // Draw the video
   image(flippedVideo, 0, 0);
 
-  elliose(position.x, position.y, 50, 50),
+  //ellipse(position.x, position.y, 50, 50),
 
   // Draw the label
   fill(255);
