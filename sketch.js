@@ -20,7 +20,8 @@ let video;
 let flippedVideo;
 // To store the classification
 let label = "";
-let position 
+let position
+let size = 50;
 
 // Load the model first
 function preload() {
@@ -45,7 +46,7 @@ function draw() {
   // Draw the video
   image(flippedVideo, 0, 0);
 
-  ellipse(position.x, position.y, 50, 50),
+  ellipse(position.x, position.y, size, size),
 
   // Draw the label
   fill(255);
@@ -79,6 +80,16 @@ function gotResult(error, results) {
   } else if (label == "DOWN") {
     position.y = position.y + 1;
   }
+
+  if(position.y > height + size/2 || position.y < -size/2) {
+    // position.x = width/2;
+    // position.y = height/2;
+    position = createVector(width/2, height/2);
+  }
+
+  // if (position.y 320, 260){
+  //  then position.y(0,0);
+  // }
 
   classifyVideo();
 }
