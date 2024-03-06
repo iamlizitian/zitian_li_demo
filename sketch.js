@@ -13,7 +13,7 @@ This example uses p5 preload function to create the classifier
 //https://teachablemachine.withgoogle.com/models/c5yUTMFy5/
 let classifier;
 // Model URL
-let imageModelURL = 'c';
+let imageModelURL = 'https://teachablemachine.withgoogle.com/models/c5yUTMFy5/';
 
 // Video
 let video;
@@ -43,6 +43,8 @@ function draw() {
   // Draw the video
   image(flippedVideo, 0, 0);
 
+  elliose(position.x, position.y, 50, 50),
+
   // Draw the label
   fill(255);
   textSize(16);
@@ -63,9 +65,17 @@ function gotResult(error, results) {
     console.error(error);
     return;
   }
+  
+  // if up, then move ball up, else if down, move ball down. else (neutral), ball stays in place.
   // The results are in an array ordered by confidence.
   // console.log(results[0]);
   label = results[0].label;
   // Classifiy again!
+
+  if(label == "UP"){
+    position.y = position.y - 1;
+
+  }
+
   classifyVideo();
 }
