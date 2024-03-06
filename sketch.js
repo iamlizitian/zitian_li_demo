@@ -10,7 +10,7 @@ This example uses p5 preload function to create the classifier
 === */
 
 // Classifier Variable
-//https://teachablemachine.withgoogle.com/models/c5yUTMFy5/
+//let imageModelURL = 'https://teachablemachine.withgoogle.com/models/bXy2kDNi/'
 let classifier;
 // Model URL
 let imageModelURL = 'https://teachablemachine.withgoogle.com/models/c5yUTMFy5/';
